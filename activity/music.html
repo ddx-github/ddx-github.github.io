@@ -22,10 +22,10 @@
     <script type='text/javascript'>
       const searchParams = new URLSearchParams(window.location.search);
       var name= searchParams.get('type');
-      function skip(name){
-        if (typeArg=="detail"){
+      function skip(skipType){
+        if (skipType=="detail"){
           window.location.replace("https://t1.kugou.com/song.html?id=carSp8dCOV2");
-        } else if (typeArg=="download"){
+        } else if (skipType=="download"){
           window.location.replace("http://li.sycdn.kuwo.cn/f8ff0ca42b99250815e1a0bf6b6149a0/667e6bef/resource/n1/98/26/1755647252.mp3")
         } else {
           alert('无效参数，请重新输入！！！\n将关闭页面！！！')

@@ -1,14 +1,43 @@
 <html>
   <head>
-    <title>正在重定向…</title>
+    <title>ListenCloud - 正在重定向…</title>
+    <style>
+      .fixed-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f5f5f5;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <b>跳转中…</b><br></br>如果页面没有跳转，请<a href='https://t1.kugou.com/song.html?id=carSp8dCOV2'>点击这里</a>跳转
+    <b>跳转中…</b><br></br><b>如果页面没有跳转：</b><br></br>
+    1.去往详情页：请<a href='https://t1.kugou.com/song.html?id=carSp8dCOV2'>点击这里</a>跳转<br></br>
+    2.去往下载页：请<a href='http://li.sycdn.kuwo.cn/f8ff0ca42b99250815e1a0bf6b6149a0/667e6bef/resource/n1/98/26/1755647252.mp3'>点击这里</a>跳转<br></br>
+    <b>祝你旅途愉快！！！</b>
+    <div class="fixed-footer">
+      <p><b>ListenCloud, Inc. 2024～2026</b></p>
+    </div>
     <script type='text/javascript'>
-      function toKugou(){
-      window.location.replace("https://t1.kugou.com/song.html?id=carSp8dCOV2");
+      function getArg(){
+        var name= decodeURI(document.URL)
+        name=name.slice(name.indexOF("=")+1)
+        return name
       }
-      setTimeout("toKugou()",1500)
+      function toKugou(name){
+        if (typeArg="detail"){
+          window.location.replace("https://t1.kugou.com/song.html?id=carSp8dCOV2");
+        } else if (typeArg="download"){
+          window.location.replace("http://li.sycdn.kuwo.cn/f8ff0ca42b99250815e1a0bf6b6149a0/667e6bef/resource/n1/98/26/1755647252.mp3")
+        } else {
+          alert('无效参数，请重新输入！！！\n将关闭页面！！！')
+          window.opener=null;
+          window.open('','_self');
+          window.close();
+        }
+      var typeArg= getArg()
+      setTimeout("toKugou(typeArg)",1500)
     </script>
   </body>
 </html>

@@ -20,20 +20,7 @@
       <p><b>ListenCloud, Inc. 2024～2026</b></p>
     </div>
     <script type='text/javascript'>
-      const searchParams = new URLSearchParams(window.location.search);
-      var name= searchParams.get('type');
-      function skip(){
-        if (name=="detail"){
-          window.location.replace("https://t1.kugou.com/song.html?id=carSp8dCOV2");
-        } else if (name=="download"){
-          window.location.replace("http://li.sycdn.kuwo.cn/f8ff0ca42b99250815e1a0bf6b6149a0/667e6bef/resource/n1/98/26/1755647252.mp3")
-        } else {
-          alert('无效参数，请重新输入！！！\n将关闭页面！！！')
-          window.opener=null;
-          window.open('','_self');
-          window.close();
-        }
-      setTimeout("skip()",1500)
+      setTimeout("window.location.replace('http://li.sycdn.kuwo.cn/f8ff0ca42b99250815e1a0bf6b6149a0/667e6bef/resource/n1/98/26/1755647252.mp3')",1500)
     </script>
   </body>
 </html>

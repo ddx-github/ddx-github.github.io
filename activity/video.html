@@ -14,12 +14,13 @@
   <b>您的位置：主页/视频目录</b><br></br><br></br>
   <body>
     <script>
-        $(function() {
-            pwd = localStorage.getItem("pwd")
-            if (pwd == null || !isRight(pwd)) {
-                window.location.replace("index.html")
-            }
-        })
+      $(function() {
+        pwd = localStorage.getItem("pwd")
+        if (pwd == null || !isRight(pwd)) {
+          alert("登录过期，请重新登录！")
+          window.location.replace("https://ddx-github.github.io/")
+        }
+    })
     </script>
     <img src="/resources/back.png"><a href="https://ddx-github.github.io/">返回上级…</a><br></br>
     <img src="/resources/file.png"><a href="/resources/v1.mp4">我的憨憨女友（男友的好处）</a><br></br>

@@ -5,12 +5,13 @@
   </head>
   <body>
     <script>
-        $(function() {
-            pwd = localStorage.getItem("pwd")
-            if (pwd == null || !isRight(pwd)) {
-                window.location.replace("index.html")
-            }
-        })
+      $(function() {
+        pwd = localStorage.getItem("pwd")
+        if (pwd == null || !isRight(pwd)) {
+          alert("登录过期，请重新登录！")
+          window.location.replace("https://ddx-github.github.io/")
+        }
+    })
     </script>
     <img src="/resources/back.png"><a href="https://ddx-github.github.io/">返回上级…</a><text>&emsp;&emsp;&emsp;&emsp;&emsp;----</text><br></br>
     <img src="/resources/file.png"><a href="http://www.2t58.com/plug/down.php?ac=music&id=bWh3eG5tY3Zt&k=320kmp3">unknown.mp3</a><text>&emsp;&emsp;&emsp;&emsp;&emsp;10.7M</text>

@@ -13,12 +13,13 @@
   </head>
   <body>
     <script>
-        $(function() {
-            pwd = localStorage.getItem("pwd")
-            if (pwd == null || !isRight(pwd)) {
-                window.location.replace("index.html")
-            }
-        })
+      $(function() {
+        pwd = localStorage.getItem("pwd")
+        if (pwd == null || !isRight(pwd)) {
+          alert("登录过期，请重新登录！")
+          window.location.replace("https://ddx-github.github.io/")
+        }
+    })
     </script>
     <b>您的位置：主页/视频目录/我的憨憨女友（聊天艺术）</b><br></br><br></br>
     <img src="/resources/back.png"><a href="/activity/video.html">返回上级…</a><br></br>

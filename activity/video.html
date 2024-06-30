@@ -13,6 +13,14 @@
   </head>
   <b>您的位置：主页/视频目录</b><br></br><br></br>
   <body>
+    <script>
+        $(function() {
+            pwd = localStorage.getItem("pwd")
+            if (pwd == null || !isRight(pwd)) {
+                window.location.replace("index.html")
+            }
+        })
+    </script>
     <img src="/resources/back.png"><a href="https://ddx-github.github.io/">返回上级…</a><br></br>
     <img src="/resources/file.png"><a href="/resources/v1.mp4">我的憨憨女友（男友的好处）</a><br></br>
     <img src="/resources/folder.png"><a href="/activity/v2/">我的憨憨女友（聊天艺术）</a><br></br>

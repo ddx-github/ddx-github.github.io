@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<html>
 <head>
-	<meta charset="utf-8">
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<script type="text/javascript" src="index.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 </head>
 <body>
-	<div>
-		<form name="f" onsubmit="check(this)">
-			<h1>登录</h1>
-			<input type="text" id="name" placeholder="账号"><br>
-			<input type="password" id="pass" placeholder="密码"><br>
-			<input type="button" onclick="check(this)" value="登录">
-			<p>© 2024-2026 ListenCloud, Inc. All right reserved.</p>
-		</form>
-	</div>
+    <input id="pwd">
+    <button id="login">Login</button>
+    <button id="logout">Logout</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+	function isRight(pwd) {
+          if (pwd == "123") {
+            return true
+          } else {
+            return false;
+          }
+        }
+        $('#login').click(function() {
+            pwd = $('#pwd').val()
+            flag = isRight(pwd)
+            if (flag) {
+                localStorage.setItem("pwd", pwd)
+		alert("登录成功！")
+                window.location.replace('home.html')
+            } else {
+                alert("密码错误，请重试")
+            }
+        });
+        $('#logout').click(function() {
+            localStorage.removeItem("pwd")
+	    alert("退出成功！")
+        })
+    </script>
 </body>
 </html>

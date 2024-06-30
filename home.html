@@ -14,7 +14,7 @@
 <script>
       user = localStorage.getItem("user")
       pass = localStorage.getItem("pwd")
-      if (user == null || pwd == null || !isRight(user) || !isRight(pass)){
+      if (user == null || pwd == null){
             alert("登录状态过期，请重新登录！")
             window.location.replace("index.html")
 </script>

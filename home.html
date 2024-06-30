@@ -19,4 +19,11 @@
 <div class="fixed-footer">
       <p><b>ListenCloud, Inc. 2024～2026</b></p>
 </div>
+<script>
+      user = localStorage.getItem("user")
+      pwd = localStorage.getItem("pwd")
+      if (user == null || pwd == null){
+            alert("登录状态过期，请重新登录！")
+            window.location.replace("index.html")
+</script>
 </body></html>

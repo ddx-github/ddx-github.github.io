@@ -13,12 +13,13 @@
   </head>
   <body>
     <script>
-        $(function() {
-            pwd = localStorage.getItem("pwd")
-            if (pwd == null || !isRight(pwd)) {
-                window.location.replace("index.html")
-            }
-        })
+      $(function() {
+        pwd = localStorage.getItem("pwd")
+        if (pwd == null || !isRight(pwd)) {
+          alert("登录过期，请重新登录！")
+          window.location.replace("https://ddx-github.github.io/")
+        }
+    })
     </script>
     <script type='text/javascript' src='https://www.wjx.cn/handler/jqemed.ashx?activity=tBnoHme&width=750&source=iframe'></script>
   <div class="fixed-footer">

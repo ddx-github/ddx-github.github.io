@@ -4,7 +4,7 @@ function check(thisform) {
 	if (name=="ddx" && pass=="ddx110509" || name=="xrh" && pass=="xrh740920") {
 		localStorage.setItem("user",name);
 		localStorage.setItem("pwd",pass);
-		alert("登录成功！");
+		alert("登录成功！\n欢迎回来！！！");
 		window.document.f.action="home.html";
 		window.document.f.submit();
 	}

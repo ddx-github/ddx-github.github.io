@@ -35,6 +35,19 @@
       }
       return urlParams;
     }
+    (function ($) {
+    $.getUrlParam = function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+          return unescape(r[2]);
+        } else { 
+          return null;
+        }  
+    }
+    })(jQuery);
+    var query = $.getUrlParam()
+    alert(query)
 </script>
 <a href='https://github.com/ddx-github/ddx-github.github.io/'>去主页</a>
 <br></br>

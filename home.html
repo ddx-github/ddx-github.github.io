@@ -19,12 +19,29 @@
         window.location.replace("index.html")
     }
     })
+    (document).ready(function() {
+      var params = getUrlParameters();
+      var searchQuery = params.q;("#search-query").text(searchQuery);
+    });
+    function getUrlParameters() {
+      var urlParams = {};
+      var match,
+        regex = /([^&=]+)=([^&]*)/g;
+      var searchString = window.location.search.substring(1);
+      while ((match = regex.exec(searchString))){
+        var key = decodeURIComponent(match[1]);
+        var value = decodeURIComponent(match[2]);
+        urlParams[key] = value;
+      }
+      return urlParams;
+    }
 </script>
 <a href='https://github.com/ddx-github/ddx-github.github.io/'>去主页</a>
 <br></br>
 <a href='/activity/guessSong.html'>猜歌</a><br></br>
 <a href='/activity/music.html'>今日歌曲下载</a><br></br>
 <a href='/programs/Music.py'>推荐 PY 文件</a>
+<p>参数值：<span id="search-query"></span></p>
 <div class="fixed-footer">
       <p><b>ListenCloud, Inc. 2024～2026</b>&emsp;&emsp;<a href="index.html">退出登录</a></p>
 </div>

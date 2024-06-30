@@ -4,8 +4,6 @@ function check(thisform) {
 	if (name=="ddx" && pass=="ddx110509" || name=="xrh" && pass=="xrh740920") {
 		localStorage.setItem("user",name);
 		localStorage.setItem("pwd",pass);
-		flag = isRight(user);
-		flag1 = isRight(pass);
 		alert("登录成功！");
 		window.document.f.action="home.html";
 		window.document.f.submit();

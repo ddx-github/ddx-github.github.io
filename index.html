@@ -11,13 +11,11 @@
   <button id="login">登录</button>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script>
-   $(function() {
-    pwd = localStorage.getItem("pwd")
-    if (isRight(pwd)) {
-      alert("您已登录，将跳转至主页！")
-      window.location.replace("home.html")
-    }
-  })
+  pwd = localStorage.getItem("pwd")
+  if (isRight(pwd)) {
+    alert("您已登录，将跳转至主页！")
+    window.location.replace("home.html")
+  }
 	function isRight(pwd) {
     if (pwd == "github.io") {
       return true

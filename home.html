@@ -24,6 +24,7 @@
 			if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {
 				localStorage.removeItem("pwd")
         alert("退出成功！")
+        window.location.replace("https://ddx-github.github.io")
 			} else {
         alert("已取消！")
 			}

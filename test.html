@@ -1,12 +1,13 @@
 <html>
   <head>
-    <title>Auto Testing</title>
+    <title>测试浏览器 JavaScript 状态</title>
   </head>
   <body>
     <b>正在测试您的浏览器是否支持JavaScript。</b><br></br>
-    <i>这可能需要一些时间。</i>
+    <i>这可能需要一些时间。<br></br>如果3秒后未跳转，请更换浏览器后<a href="https://ddx-github.github.io/?target=https://ddx-github.github.io/home.html">点击这里</a>跳转。</i>
     <script type="text/javascript">
-      alert("测试成功！")
+      setTimeout('alert("测试成功！\n您现在将跳转至登录页，请输入您的密码以登录。")',500)
+      window.location.replace("https://ddx-github.github.io/?target=https://ddx-github.github.io/home.html")
     </script>
   </body>
 </html>

@@ -17,7 +17,8 @@
         $(function() {
             pwd = localStorage.getItem("pwd")
             if (pwd == null || !isRight(pwd)) {
-                window.location.replace("index.html")
+              var target = "https://ddx-github.github.io/?target=" + window.location.href
+              window.location.replace(target)
             }
         })
     function logout() {

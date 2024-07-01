@@ -29,15 +29,6 @@
         alert("已取消！")
 			}
 	  }
-    function getQueryString(name) {
-      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-      var r = window.location.search.substr(1).match(reg);
-      if (r != null) {
-        return unescape(r[2]);
-      }
-      return null;
-  }
-  alert(getQueryString("target"));
 </script>
 <a href='https://github.com/ddx-github/ddx-github.github.io/'>去主页</a>
 <br></br>

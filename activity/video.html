@@ -22,8 +22,17 @@
           window.location.replace("https://ddx-github.github.io/")
         }
     })
+    function logout() {
+			if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {
+				localStorage.removeItem("pwd")
+        alert("退出成功！")
+        window.location.replace("https://ddx-github.github.io")
+			} else {
+        alert("已取消！")
+			}
+	  }
     </script>
-    <img src="/resources/back.png"><a href="https://ddx-github.github.io/">返回上级…</a><br></br>
+    <img src="/resources/back.png"><a href="https://ddx-github.github.io/home.html">返回上级…</a><br></br>
     <img src="/resources/file.png"><a href="/resources/v1.mp4">我的憨憨女友（男友的好处）</a><br></br>
     <img src="/resources/folder.png"><a href="/activity/v2/">我的憨憨女友（聊天艺术）</a><br></br>
     <img src="/resources/folder.png"><a href="/activity/v3/">我的憨憨女友（过生日）</a><br></br>
@@ -31,7 +40,7 @@
     <img src="/resources/folder.png"><a href="/activity/v5/">带着丈母娘去接女友时（尴尬爆棚）</a><br></br>
     <img src="/resources/folder.png"><a href="/activity/v6/">挑战女友极限（亲亲）</a><br></br>
     <div class="fixed-footer">
-      <p><b>视频目录提供器 2024-2026</b></p>
+      <p><b>视频目录提供器 2024-2026</b>&emsp;&emsp;<button onclick="logout()">登出</button></p>
     </div>
   </body>
 </html>

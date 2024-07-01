@@ -23,13 +23,22 @@
       return false;
     }
   }
+  function getQueryString(name) {
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) {
+        return unescape(r[2]);
+      }
+      return null;
+  }
   $('#login').click(function() {
     pwd = $('#pwd').val()
     flag = isRight(pwd)
     if (flag) {
       localStorage.setItem("pwd", pwd)
 		  alert("登录成功！")
-      window.location.replace('home.html')
+      var target = getQueryString("target")
+      window.location.replace(target)
     } else {
       alert("密码错误，请重试")
     }

@@ -20,10 +20,14 @@
         window.location.replace("index.html")
     }
     })
-    $('#logout').click(function() {
-    localStorage.removeItem("pwd")
-	  alert("退出成功！")
-    })
+	  function logout() {
+			if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {
+				localStorage.removeItem("pwd")
+        alert("退出成功！")
+			} else {
+        alert("已取消！")
+			}
+	  }
 </script>
 <a href='https://github.com/ddx-github/ddx-github.github.io/'>去主页</a>
 <br></br>
@@ -31,6 +35,6 @@
 <a href='/musicdir'>音乐目录</a><br></br>
 <a href='/programs/Music.py'>推荐 PY 文件</a>
 <div class="fixed-footer">
-      <p><b>ListenCloud, Inc. 2024～2026</b>&emsp;&emsp;<button id="logout">退出登录</button></p>
+      <p><b>ListenCloud, Inc. 2024～2026</b>&emsp;&emsp;<button onclick="logout()">登出</button></p>
 </div>
 </body></html>

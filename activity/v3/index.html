@@ -12,6 +12,7 @@
     </style>
   </head>
   <body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
       $(function() {
         pwd = localStorage.getItem("pwd")
@@ -20,13 +21,22 @@
           window.location.replace("https://ddx-github.github.io/")
         }
     })
+      function logout() {
+			if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {
+				localStorage.removeItem("pwd")
+        alert("退出成功！")
+        window.location.replace("https://ddx-github.github.io")
+			} else {
+        alert("已取消！")
+			}
+	  }
     </script>
     <b>您的位置：主页/视频目录/我的憨憨女友（过生日）</b><br></br><br></br>
     <img src="/resources/back.png"><a href="/activity/video.html">返回上级...</a><br></br>
     <img src="/resources/file.png"><a href="/resources/v3/v3_1.mp4">Partition 1</a><br></br>
     <img src="/resources/file.png"><a href="/resources/v3/v3_2.mp4">Partition 2</a><br></br>
     <div class="fixed-footer">
-      <p><b>视频目录提供器 2024-2026</b></p>
+      <p><b>视频目录提供器 2024-2026</b>&emsp;&emsp;<button onclick="logout()">登出</button></p>
     </div>
   </body>
 </html>

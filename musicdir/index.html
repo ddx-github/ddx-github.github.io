@@ -4,6 +4,7 @@
     <link rel="icon" href="http://www.kugou.com/favicon.ico" type="image/x-icon">
   </head>
   <body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
       $(function() {
         pwd = localStorage.getItem("pwd")
@@ -12,8 +13,18 @@
           window.location.replace("https://ddx-github.github.io/")
         }
     })
+    function logout() {
+			if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {
+				localStorage.removeItem("pwd")
+        alert("退出成功！")
+        window.location.replace("https://ddx-github.github.io")
+			} else {
+        alert("已取消！")
+			}
+	  }
     </script>
-    <img src="/resources/back.png"><a href="https://ddx-github.github.io/">返回上级…</a><text>&emsp;&emsp;&emsp;&emsp;&emsp;----</text><br></br>
+    <b>您的位置：主页/音乐目录</b>&emsp;&emsp;<button onclick="logout()">登出</button>
+    <img src="/resources/back.png"><a href="https://ddx-github.github.io/home.html">返回上级…</a><text>&emsp;&emsp;&emsp;&emsp;&emsp;----</text><br></br>
     <img src="/resources/file.png"><a href="http://www.2t58.com/plug/down.php?ac=music&id=bWh3eG5tY3Zt&k=320kmp3">unknown.mp3</a><text>&emsp;&emsp;&emsp;&emsp;&emsp;10.7M</text>
   </body>
 </html>

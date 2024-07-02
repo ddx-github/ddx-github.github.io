@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>猫猫呀my 说明文件</title>
+  </head>
+  <body>
+    <script>
+      $(function() {
+        pwd = localStorage.getItem("pwd")
+        if (pwd == null || !isRight(pwd)) {
+          alert("登录过期，请重新登录!")
+          var target = "https://ddx-github.github.io/?target=" + window.location.href
+          window.location.replace(target)
+        }
+      })
+      function logout() {
+			  if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {
+				  localStorage.removeItem("pwd")
+          alert("退出成功！")
+          window.location.replace("https://ddx-github.github.io")
+			  }
+      }
+    </script>
+    <b>您的位置：主页/视频目录/用户说明文件</b>&emsp;&emsp;<button onclick="logout()">登出</button><br></br><br></br>
+    <img src="/resources/back.png"><a href="/activity/video.html">返回视频目录</a><br></br>
+    <b>用户名：</b>猫猫呀my<br></br>
+    <i>有些故事，往往在不经意间就开始了。<br></br>网站构建：GitHub，视频提供：支付宝</i>
+    <b>其它信息：</b><br></br>
+    <b>用户认证信息：优质搞笑领域创作者</b><br></br>
+    <i>直链（需安装支付宝客户端）：</i><a href="https://ur.alipay.com/_2CnXlG5Bo1BVZvADOuGhX0">点击这里进入</a>
+  </body>
+</html>

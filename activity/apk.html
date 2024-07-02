@@ -3,8 +3,26 @@
     <title>APK 目录</title>
   </head>
   <body>
-    <img src="/resources/back.png"><a href="https://ddx-github.github.io/home.html">返回上级…</a>
-    <img src="/resources/file.png"><a href="https://files02.tchspt.com/down/instagram-337.0.0.35.apk">Instagram.apk</a>
-    <img src="/resources/file.png"><a href="https://dl5.filehippo.com/c63/928/2dfa8ffbcef5b70d03e4025abd0fb30c30/com-facebook-katana-451409117-67484716-3f1fe4ee74d221e0ac08da5f0df811a5.apk?Expires=1719877655&Signature=7e6cc6dd934b1f5080c9f90ef9400bbf4f54dc49&url=https://filehippo.com/zh/android/download_facebook/&Filename=com-facebook-katana-451409117-67484716-3f1fe4ee74d221e0ac08da5f0df811a5.apk">Facebook.apk</a>
+    <script>
+      $(function() {
+        pwd = localStorage.getItem("pwd")
+        if (pwd == null || !isRight(pwd)) {
+          alert("登录过期，请重新登录！")
+          var target = "https://ddx-github.github.io/?target=" + window.location.href
+          window.location.replace(target)
+        }
+      })
+      function logout() {
+			if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {
+				localStorage.removeItem("pwd")
+        alert("退出成功！")
+        window.location.replace("https://ddx-github.github.io")
+      }
+	  }
+    </script>
+    <b>您的位置：主页/安卓安装包目录</b>&emsp;&emsp;<button onclick="logout()">登出</button><br></br><br></br>
+    <img src="/resources/back.png"><a href="https://ddx-github.github.io/home.html">返回上级…</a><br></br>
+    <img src="/resources/file.png"><a href="https://files02.tchspt.com/down/instagram-337.0.0.35.apk">Instagram.apk</a><br></br>
+    <img src="/resources/file.png"><a href="https://dl5.filehippo.com/c63/928/2dfa8ffbcef5b70d03e4025abd0fb30c30/com-facebook-katana-451409117-67484716-3f1fe4ee74d221e0ac08da5f0df811a5.apk?Expires=1719877655&Signature=7e6cc6dd934b1f5080c9f90ef9400bbf4f54dc49&url=https://filehippo.com/zh/android/download_facebook/&Filename=com-facebook-katana-451409117-67484716-3f1fe4ee74d221e0ac08da5f0df811a5.apk">Facebook.apk</a><br></br>
   </body>
 </html>

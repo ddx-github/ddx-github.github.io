@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>音乐长度测试</title>
+  </head>
+  <body>
+    <audio id="myAudio" controls>
+      <source src="https://www.runoob.com/try/demo_source/horse.ogg" type="audio/ogg">
+      不支持 audio 组件。
+    </audio>
+    <button onclick="getDur()">获取音频时长</button>
+    <script>
+      function getDur() {
+        var x = document.getElementById("myAudio").duration;
+        alert(x)
+    </script>
+  </body>
+</html>

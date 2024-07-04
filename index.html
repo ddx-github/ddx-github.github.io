@@ -4,13 +4,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <title>Login</title>
+    <title>登录</title>
 </head>
 <body>
-  <input type="password" id="pwd" placeholder="密码">
-  <button id="login">登录</button>
+  <input type="password" id="pwd" placeholder="密码"><br></br>
+  <button id="login">登录</button><br></br>
+  <button onclick="whyLogin()">为什么我需要登录？</button>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script>
+  function whyLogin() {
+    alert("自2024年7月1日开始，该网站开始存储个人数据（比如：喜欢的歌等）\n为防止他人随意访问，该网站设置了登录密码，请联系该网站管理员获取。")
   pwd = localStorage.getItem("pwd")
   if (isRight(pwd)) {
     alert("您已登录，将跳转至主页！")

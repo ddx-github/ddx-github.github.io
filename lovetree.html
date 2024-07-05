@@ -5,7 +5,7 @@
     <title>爱情树</title>
     <link type="text/css" rel="stylesheet" href="/resources/lovetree/LvTree.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="/resources/lovetree/jscex.min.js"></script>
+    <script type="text/javascript" src="/resources/lovetree/jscex.js"></script>
     <script type="text/javascript" src="/resources/lovetree/jscex-parser.js"></script>
     <script type="text/javascript" src="/resources/lovetree/jscex-jit.js"></script>
     <script type="text/javascript" src="/resources/lovetree/jscex-builderbase.js"></script>
@@ -55,6 +55,46 @@
     </div>
 </div>
 <script type="text/javascript">
+    function getQueryString(name) {
+      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) {
+        return unescape(r[2]);
+      }
+      return null;
+    }
+    var code = getQueryString("code")
+    if (code == "11216240") {
+      var male = "hezhizheng"
+      var female = "linzhiyan"
+      var start = "2023-10-01T00:00:00"
+    } else if (code == "11231350") {
+      var male = "yuanjun"
+      var female = "wuzilin"
+      var start = "2023-10-01T00:00:00"
+    } else if (code == "23876524") {
+      var male = "miaobujin"
+      var female = "qiaobiluo"
+      var start = "1990-01-01T00:00:00"
+    } else {
+      alert("参数验证失败！\n将使用默认值代替！")
+      var male = "unknown"
+      var female = "unknown"
+      var start = "1900-01-01T00:00:00"
+    }
+    var config = {
+    lines: [
+        "亲爱的" + female,
+        "花开一季，有落红为证",
+        "逝去的岁月，如何能托于烟尘",
+        "你的浅笑，是我永生眷恋",
+        "相思的真情，是否能明白一二",
+        "亲爱的宝贝，你是我的唯一",
+        "爱你永远。。。",
+    ],
+    date: start,
+    names: [male, female]
+    }
     pwd = localStorage.getItem("pwd")
     if (pwd == null || !isRight(pwd)) {
         alert("登录过期，请重新登录！")
@@ -67,8 +107,6 @@
 				localStorage.removeItem("pwd")
         alert("退出成功！")
         window.location.replace("https://ddx-github.github.io")
-			} else {
-        alert("已取消！")
 			}
 	  }
     $('#code').html(config.lines.map(item => {

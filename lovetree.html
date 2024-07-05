@@ -4,7 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>爱情树</title>
     <link type="text/css" rel="stylesheet" href="/resources/lovetree/LvTree.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="/resources/lovetree/jscex.js"></script>
     <script type="text/javascript" src="/resources/lovetree/jscex-parser.js"></script>
     <script type="text/javascript" src="/resources/lovetree/jscex-jit.js"></script>
@@ -14,6 +13,13 @@
     <script type="text/javascript" src="/resources/lovetree/LvTree.fun.js" charset="utf-8"></script>
     <script type="text/javascript" src="/resources/lovetree/LvTree.main.js" charset="utf-8"></script>
     <script type="text/javascript" src="/resources/lovetree/jquery.js"></script>
+    <style type="text/css">
+        <!--
+        .STYLE1 {
+            color: #666666
+        }
+
+        -->
 </head>
 <body>
 <img src="/resources/lovetree/music.png" style="position: fixed;z-index: 10001;top:10px;right:10px;" onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}">
@@ -63,27 +69,16 @@
       }
       return null;
     }
-    var code = getQueryString("code")
-    if (code == "11216240") {
-      var male = "hezhizheng"
-      var female = "linzhiyan"
-      var start = "2023-10-01T00:00:00"
-    } else if (code == "11231350") {
-      var male = "yuanjun"
-      var female = "wuzilin"
-      var start = "2023-10-01T00:00:00"
-    } else if (code == "23876524") {
-      var male = "miaobujin"
-      var female = "qiaobiluo"
-      var start = "1990-01-01T00:00:00"
-    } else {
-      alert("参数验证失败！\n将使用默认值代替！")
-      var male = "unknown"
-      var female = "unknown"
-      var start = "1900-01-01T00:00:00"
-    }
+    var male = getQueryString("male");
+    var female = getQueryString("female");
+    var year = getQueryString("year");
+    var month = getQueryString("month");
+    var day = getQueryString("day");
+    if (male == "null" || male == null || female == "null" || female == null || year == "null"|| year == null || month == "null"|| month == null || day == "null"|| day == null) {
+      alert("参数验证失败！");
+      window.location.replace("home.html");
     var config = {
-    lines: [
+      lines: [
         "亲爱的",
         "花开一季，有落红为证",
         "逝去的岁月，如何能托于烟尘",
@@ -91,22 +86,14 @@
         "相思的真情，是否能明白一二",
         "亲爱的宝贝，你是我的唯一",
         "爱你永远。。。",
-    ]
+      ],
     }
-    pwd = localStorage.getItem("pwd")
+    pwd = localStorage.getItem("pwd");
     if (pwd == null || !isRight(pwd)) {
-        alert("登录过期，请重新登录！")
-        var target = "https://ddx-github.github.io/?target=" + window.location.href
-        window.location.replace(target)
+        alert("登录过期，请重新登录！");
+        var target = "https://ddx-github.github.io/?target=" + window.location.href;
+        window.location.replace(target);
     }
-    })
-	  function logout() {
-			if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {
-				localStorage.removeItem("pwd")
-        alert("退出成功！")
-        window.location.replace("https://ddx-github.github.io")
-			}
-	  }
     $('#code').html(config.lines.map(item => {
         return `<span class="say">${item}</span><br>					<span class="say"> </span><br>`
     }).reduce((a, b) => {

@@ -69,14 +69,19 @@
       }
       return null;
     }
+    function isInt(obj) {
+      return typeof obj === 'number' && obj%1 === 0
+    }
     var male = getQueryString("male");
     var female = getQueryString("female");
     var year = getQueryString("year");
     var month = getQueryString("month");
     var day = getQueryString("day");
-    if (male == "null" || male == null || female == "null" || female == null || year == "null"|| year == null || month == "null"|| month == null || day == "null"|| day == null) {
+    if (male == "null" || male == null || female == "null" || female == null || year == "null"|| year == null || month == "null"|| month == null || day == "null" || day == null || !isInt(year) || !isInt(month) || !isInt(day)) {
       alert("参数验证失败！");
       window.location.replace("home.html");
+    }
+    var start = year + "-" + month + "-" + day + "T00:00:00";
     var config = {
       lines: [
         "亲爱的",
@@ -86,7 +91,7 @@
         "相思的真情，是否能明白一二",
         "亲爱的宝贝，你是我的唯一",
         "爱你永远。。。",
-      ],
+      ]
     }
     pwd = localStorage.getItem("pwd");
     if (pwd == null || !isRight(pwd)) {
@@ -102,7 +107,6 @@
     $("#clock-box-inside-text").html(`${male}<span class="STYLE1">与</span> ${female}<span class="STYLE1">已经相恋了</span>`)
     (function () {
         var canvas = $('#canvas');
-
         if (!canvas[0].getContext) {
             $("#error").show();
             return false;

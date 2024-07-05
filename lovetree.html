@@ -84,16 +84,14 @@
     }
     var config = {
     lines: [
-        "亲爱的" + female,
+        "亲爱的",
         "花开一季，有落红为证",
         "逝去的岁月，如何能托于烟尘",
         "你的浅笑，是我永生眷恋",
         "相思的真情，是否能明白一二",
         "亲爱的宝贝，你是我的唯一",
         "爱你永远。。。",
-    ],
-    date: start,
-    names: [male, female]
+    ]
     }
     pwd = localStorage.getItem("pwd")
     if (pwd == null || !isRight(pwd)) {
@@ -110,12 +108,11 @@
 			}
 	  }
     $('#code').html(config.lines.map(item => {
-        return `<span class="say">${item}</span><br>
-						<span class="say"> </span><br>`
+        return `<span class="say">${item}</span><br>					<span class="say"> </span><br>`
     }).reduce((a, b) => {
         return a + b;
-    }))
-    $("#clock-box-inside-text").html(`${config.names[0]}<span class="STYLE1">与</span> ${config.names[1]}<span class="STYLE1">已经相恋了</span>`)
+    }
+    $("#clock-box-inside-text").html(`${male}<span class="STYLE1">与</span> ${female}<span class="STYLE1">已经相恋了</span>`)
     (function () {
         var canvas = $('#canvas');
 
@@ -232,7 +229,7 @@
             }
         }));
         var textAnimate = eval(Jscex.compile("async", function () {
-            var together = new Date(config.date);
+            var together = new Date(start);
             $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
             while (true) {

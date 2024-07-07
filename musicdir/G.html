@@ -13,6 +13,11 @@
           var target = "https://ddx-github.github.io/?target=" + window.location.href
           window.location.replace(target)
         }
+        var pwd2 = prompt("BitLocker（G:）\n输入密码以解锁驱动器：")
+        if (pwd2 != "gpt-disk") {
+          alert("密码不正确！")
+          window.location.replace("/musicdir")
+        }
     })
     function logout() {
 			if (confirm("确定登出？\n下次访问时需重新输入密码登录。")) {

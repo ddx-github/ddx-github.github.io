@@ -1,6 +1,14 @@
 html{
 	background-image: url("de.jpg");
 }
+:root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica, Arial, sans-serif;
+}
+*,
+::after,
+::before {
+    font-family: inherit;
+}
 input[type=password]{
 	background-color: white;
 	color: black;

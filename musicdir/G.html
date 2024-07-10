@@ -5,7 +5,15 @@
     <title>GPT Disk（G:）</title>
   </head>
   <body>
+	  <script src="https://code.jquery.com/jquery-3.7.1.min.js">
     <script>
+      function isRight(pwd) {
+        if (pwd == "github.io") {
+          return true;
+        } else {
+          return false;
+        }
+      }
       $(function() {
         pwd = localStorage.getItem("pwd")
         if (pwd == null || !isRight(pwd)) {

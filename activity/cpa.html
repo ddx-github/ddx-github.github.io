@@ -6,9 +6,17 @@
   <body>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
+      function getToken(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+          return unescape(r[2]);
+        }
+        return null;
+      }
       var token = getToken("resToken");
-      if (token != "a5y378") {
-        alert("这个Token已经失效了哦～");
+      if (token != "a5y378" || token == null) {
+        alert("这个Token已经失效了哦～\n小提醒：Token是会变化的哟～");
         window.location.replace("https://www.baidu.com");
       }
       function fun() {
@@ -17,7 +25,7 @@
       }
     </script>
     <b>点击下面的一个链接下载答案ZIP包，解压后即可看到答案。</b><br></br>
-    <b>想要获得祝福？</b><button onclick="fun()">点击这里</button><b>就可以啦。</b><br></br>
+    <b>想要获得祝福？</b><button onclick="fun()">点击这里</button><b>就可以啦～</b><br></br>
     <a href="/resources/cpa/math1.zip">数学练习纸答案</a><br></br>
     <a href="/resources/cpa/math2.zip">数学计算题答案</a><br></br>
     <a href="/resources/cpa/eng.zip">英语答案</a><br></br>

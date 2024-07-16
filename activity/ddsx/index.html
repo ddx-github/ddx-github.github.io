@@ -5,7 +5,20 @@
   <body>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
-      //code.
+      $(function() {
+        pwd = localStorage.getItem("pwd")
+        if (pwd == null || !isRight(pwd)) {
+          alert("登录过期，请重新登录!")
+          var target = "https://ddx-github.github.io/?target=" + window.location.href
+          window.location.replace(target)
+        }
+      });
+      function logout() {
+        if (confirm("你确定要退出吗？")){
+          localStorage.removeItem("pwd");
+          alert("退出成功！")
+        }
+      }
     </script>
     <b>您的位置：主页/视频目录/点点碎星</b>&emsp;&emsp;<button onclick="logout()">登出</button><br></br><br></br>
     <img src="/resources/back.png"><a href="/activity/video.html">返回上级…</a><br></br>

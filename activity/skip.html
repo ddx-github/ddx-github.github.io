@@ -39,7 +39,7 @@
         if (confirm("即将跳转至第三方页面，继续吗？")) {
           window.location.replace(goto);
         } else {
-          window.location.replace("/home.html");
+          window.location.href = document.referrer;
         }
       }
       if (type == "verify") {
@@ -49,7 +49,7 @@
           window.location.replace(goto);
         } else {
           alert("验证失败！");
-          window.location.replace("/home.html");
+          window.location.href = document.referrer;
         }
       }
       if (type == "alert") {
@@ -60,11 +60,8 @@
         if (confirm("你要允许此应用对设备做更改吗？")) {
           window.location.replace(goto);
         } else {
-          window.location.replace("/home.html");
+          window.location.href = document.referrer;
         }
-      } else {
-        alert("参数非法！");
-        window.location.replace("/home.html");
       }
     </script>
     <b>啊哦，你的浏览器不支持JavaScript！</b><br></br>

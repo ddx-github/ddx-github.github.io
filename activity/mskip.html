@@ -14,41 +14,9 @@
         }
         return null;
       }
-      var context = new contextClass();
-      var source = null;
-      var audioBuffer = null;
-      function stopSound() {
-        if (source) {
-          source.stop(musics);
-        }
-      }
-      function playSound() {
-        source = context.createBufferSource();
-        source.buffer = audioBuffer;
-        source.loop = true;
-        source.connect(context.destination);
-        source.start(0);
-      }
-      function initSound(arrayBuffer) {
-        context.decodeAudioData(arrayBuffer, function(buffer) {
-          audioBuffer = buffer;
-          playSound();
-        }, function(e) {
-          alert("Not found");
-        });
-      }
-      function loadAudioFile(url) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-        xhr.responseType = 'arraybuffer';
-        xhr.onload = function(e) {
-          initSound(this.response);
-          document.title = "播放中…";
-        };
-        xhr.send();
-      }
       var music = get("source");
-      loadAudioFile(music);
+      var audio = new Audio(music);
+      audio.play();
     </script>
   </body>
 </html>

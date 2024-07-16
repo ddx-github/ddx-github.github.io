@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>跳转中……</title>
+  </head>
+  <body>
+    <script>
+      var type = get("type");
+      var goto = get("goto");
+      if (type == "confirm") {
+        if (confirm("即将跳转至第三方页面，继续吗？")) {
+          window.location.replace(goto);
+        } else {
+          window.location.replace("/home.html");
+        }
+      }
+      if (type == "verify") {
+        var syscode = getRandom(6);
+        var code = prompt("请进行人机验证。\n输入：" + syscode);
+        if (syscode == code) {
+          window.location.replace(goto);
+        } else {
+          alert("验证失败！");
+          window.location.replace("/home.html");
+        }
+      }
+      if (type == "alert") {
+        alert("您即将跳转至第三方页面，请注意个人隐私安全");
+        window.location.replace(goto);
+      }
+      if (type == "exe") {
+        if (confirm("你要允许此应用对设备做更改吗？")) {
+          window.location.replace(goto);
+        } else {
+          window.location.replace("/home.html");
+        }
+      } else {
+        alert("参数非法！");
+        window.location.replace("/home.html");
+      }
+    </script>
+    <b>啊哦，你的浏览器不支持JavaScript！</b><br></br>
+    <i>换个浏览器再访问吧！</i>
+  </body>
+</html>

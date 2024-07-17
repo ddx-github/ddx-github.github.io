@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>音乐链接生成器</title>
+  </head>
+  <body>
+    <input id="id" placeholder="输入音乐ID"><br></br>
+    <button onclick="getURL()">获取</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      function getURL() {
+        id = $('#id').val()
+        var url = "http://www.2t58.com/plug/down.php?ac=music&id=" + id + "&k=320kmp3";
+        document.write("复制下面的链接即可下载～\n" + url);
+      }
+    </script>
+  </body>
+</html>

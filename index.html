@@ -8,21 +8,21 @@
 </head>
 <body>
   <input type="password" id="pwd" placeholder="密码"><br></br>
+  <input type="checkbox" id="autologin">自动登录&emsp;<input type="checkbox" id="rempwd">记住密码<br></br>
   <button id="login">登录</button><br></br>
-  <button onclick="whyLogin()">为什么我需要登录？</button>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script>
-  function whyLogin() {
-    alert("自2024年7月1日开始，该网站开始存储个人数据（比如：喜欢的歌等）\n为防止他人随意访问，该网站设置了登录密码，请联系该网站管理员获取。")
-  }
-  pwd = localStorage.getItem("pwd")
-  if (isRight(pwd)) {
-    alert("您已登录，将跳转至主页！")
-    var target = getQueryString("target")
-      if (target == null) {
-        window.location.replace("home.html")
-      }
-    window.location.replace(target)
+	var autologin = document.getElementById("autologin").checked;
+	var rempwd = document.getElementById("rempwd").checked;
+  alogin = localStorage.getItem("alogin");
+  pwd = localStorage.getItem("pwd");
+  if (isRight(pwd) || alogin) {
+    alert("您已登录！");
+    var target = getQueryString("target");
+    if (target == null) {
+      window.location.replace("home.html");
+    }
+    window.location.replace(target);
   }
 	function isRight(pwd) {
     if (pwd == "github.io") {
@@ -32,18 +32,23 @@
     }
   }
   function getQueryString(name) {
-      var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-      var r = window.location.search.substr(1).match(reg);
-      if (r != null) {
-        return unescape(r[2]);
-      }
-      return null;
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+      return unescape(r[2]);
+    }
+    return null;
   }
   $('#login').click(function() {
     pwd = $('#pwd').val()
     flag = isRight(pwd)
     if (flag) {
-      localStorage.setItem("pwd", pwd)
+      if (autologin) {
+        localStorage.setItem("alogin","ok");
+      }
+      if (rempwd) {
+        localStorage.setItem("pwd",pwd);
+      }
 		  alert("登录成功！")
       var target = getQueryString("target")
       if (target == null) {

@@ -1,0 +1,28 @@
+<html>
+  <head><title>助力</title></head>
+  <body>
+    <script>
+      function isRight(pwd) {
+        if (pwd == "github.io") {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      pwd = localStorage.getItem("pwd");
+      if (pwd == null || !isRight(pwd)) {
+        alert("登录过期，请重新登录！");
+      }
+      function logout() {
+        if (confirm("你确定要退出吗？")) {
+          localStorage.removeItem("pwd");
+          alert("退出成功！");
+          window.location.replace("/");
+        }
+      }
+    </script>
+    <b>您的位置：主页/助力列表</b>&emsp;&emsp;<button onclick="logout()">登出</button><br /><br />
+    <img src="/resources/back.png"><a href="/home.html">返回上级…</a><br />
+    <img src="/resources/file.png"><a href="/activity/skip.html?type=verify&goto=/resources/help/musehuixiang.jpg">暮色回响</a><br />
+  </body>
+</html>

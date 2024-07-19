@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ListenCloud Server ARF7201</title>
+	<link rel="stylesheet" type="text/css" href="/index.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="server.js"></script>
+</head>
+<body>
+	<div>
+		<form name="f" onsubmit="check(this)">
+			<h1>登录到服务器</h1>
+			<input type="text" id="name" placeholder="用户名"><br>
+			<input type="password" id="pass" placeholder="密码"><br>
+			<input type="button" onclick="check(this)" value="登录">
+			<p>© 2024～2026 ListenCloud Inc. All Right Reserved</p>
+      <p>您正在登录服务器，请注意辨别链接。</p>
+      <p><button onclick="alert('如忘记密码，请按服务器复位键5秒，使服务器复位。\n注意：\n1.服务器复位后，数据将全部删除，需重新上传。\n2.复位后，默认用户名，密码均为admin。')">忘记密码？</button></p>
+		</form>
+	</div>
+</body>
+</html>

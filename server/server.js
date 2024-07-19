@@ -3,6 +3,8 @@ function check(thisform) {
 	var pass=document.getElementById("pass").value;
 	if (name=="admin" && pass=="abcd1234") {
 		alert("登录成功！");
+    localStorage.setItem("serveradmin",name);
+    localStorage.setItem("serverpwd",pass);
 		window.document.f.action="/server";
 		window.document.f.submit();
 	}

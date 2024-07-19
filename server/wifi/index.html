@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>ListenCloud Server ARF7201</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      admin = localStorage.getItem("serveradmin");
+      pwd = localStorage.getItem("serverpwd");
+      if (admin == null || pwd == null) {
+        alert("登录过期，请重新登录！");
+        window.location.replace("/server/login.html");
+      }
+    </script>
+    <b>Wi-Fi设置：</b>
+    <text>无线名称：Lncd_C38B<br />无线密码：5gD%9cN!</text>
+  </body>
+</html>

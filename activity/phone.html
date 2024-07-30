@@ -7,5 +7,10 @@
     id="appetize"
     src="https://appetize.io/embed/demo">
 </iframe>
+<script>
+   var iframe = document.getElementById("appetize");
+   iframe.width = iframe.contentWindow.document.body.scrollWidth;
+   iframe.height = iframe.contentWindow.document.body.scrollHeight;
+</script>
 </body>
 </html>

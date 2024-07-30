@@ -7,7 +7,7 @@
     <i>如果页面没有跳转，请换个支持JS的浏览器吧。</i>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
-      function getSingerID(name) {
+      function get(name) {
         var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
         var r = window.location.search.substr(1).match(reg);
         if (r != null) {
@@ -15,8 +15,15 @@
         }
         return null;
       }
-      var request = getSingerID("si");
-      window.location.replace("https://www.kugou.com/singer/info/" + request);
+      var type = get("type");
+      var request = get("si");
+      if (type == "song") {
+        window.location.replace("https://t4.kugou.com/song.html?id=" + request);
+      } else if (type == "singer") {
+        window.location.replace("https://www.kugou.com/singer/info/" + request);
+      } else {
+        document.write("参数不正确");
+      }
     </script>
   </body>
 </html>

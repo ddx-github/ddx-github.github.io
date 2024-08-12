@@ -3,6 +3,14 @@
   <body>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
+      function get(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+          return unescape(r[2]);
+        }
+        return null;
+      }
       var code = get("sharecode");
       if (code == "85268488") {
         var pwd = prompt("请输入提取码：");
@@ -11,6 +19,23 @@
         } else {
           alert("提取码错误！");
         }
+      } else if (code == "73920101") {
+        var pwd = prompt("请输入提取码：");
+        if (pwd == "1r6u") {
+          window.location.replace("https://t4.kugou.com/song.html?id=4YJKvc4CQV2");
+        } else {
+          alert("提取码错误！");
+        }
+      } else if (code == "62810147") {
+        var pwd = prompt("请输入提取码：");
+        if (pwd == "6y28") {
+          window.location.replace("http://m.kugou.com/singer/85963");
+        } else {
+          alert("提取码错误！");
+        }
+      } else {
+        document.title = "资源已过期";
+        document.write("你来晚了，分享的链接已经过期了");
       }
     </script>
   </body>

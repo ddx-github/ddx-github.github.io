@@ -33,6 +33,9 @@
         } else {
           alert("提取码错误！");
         }
+      } else if (code == null) {
+        document.title = "无效链接";
+        document.write("分享链接无效");
       } else {
         document.title = "资源已过期";
         document.write("你来晚了，分享的链接已经过期了");

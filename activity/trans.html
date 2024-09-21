@@ -1,0 +1,17 @@
+<html>
+  <head><title>网文翻译器</title></head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      function dotrans(trtext) {
+        if (trtext == "") alert("译文：");
+      }
+      var text1 = get("text");
+      if (text1 == null) {
+        document.write("<input></input>");
+      } else {
+        dotrans(text1);
+      }
+    </script>
+  </body>
+</html>

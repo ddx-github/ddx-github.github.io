@@ -33,9 +33,16 @@
         } else {
           alert("提取码错误！");
         }
-      } else if (code=="22221111") {
+      } else if (code == "27381027") {
         document.title = "AirDrop 空投分享";
         var pwd = prompt("请输入提取码：");
+        if (pwd == "吸食鸦片") {
+          if (confirm("ddx 给你分享了文件：mt-2.jpg，你要接受吗？")) {
+            window.location.replace("https://ddx-github.github.io/resources/mt-2.jpg");
+          }
+        } else {
+          alert("提取码错误！");
+        }
       } else if (code == null) {
         document.title = "无效链接";
         document.write("分享链接无效");

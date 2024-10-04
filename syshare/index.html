@@ -3,6 +3,14 @@
   <body>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
+      function get(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+          return unescape(r[2]);
+        }
+        return null;
+      }
       var code = get("id");
       if (id == "35183018") {
         document.title = "资源分享";

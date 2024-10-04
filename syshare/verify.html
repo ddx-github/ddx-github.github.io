@@ -1,0 +1,43 @@
+<html>
+  <head><title>安全验证</title></head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      function mapAnswer(aid) {
+        if (aid == "sjww3dixk9") {
+          return "Interstellar";
+        }
+      }
+      function mapQuestion(qid) {
+        if (qid == "sjww3dixk9") {
+          return "你最喜欢的歌是？";
+        }
+      }
+      function mapNext(nid) {
+        if (nid == "sjww3dixk9") {
+          return "https://activity.kugou.com/giftcard/v-1bb323c0/index.html?cardno=792c8612c19f376b722bd5ac6fb4003601669051e261f6aff1e46961068245b6&source_id=2122";
+        }
+      }
+      var vcode = getRandom(6);
+      var ucode = prompt("第1步：人机验证\n请输入："+vcode);
+      if (ucode == vcode) {
+        var step1 = "1";
+      } else {
+        var step1 = null;
+      }
+      var answer = mapAnswer(get("step2"));
+      var question = mapQuestion(get("step2"));
+      var uanswer = prompt("第2步：用户认证\n"+question)
+      if (uanswer == answer) {
+        var step2 = "1";
+      } else {
+        var step2 = null;
+      }
+      if (step1 == "1" && step2 == "1") {
+        window.location.replace(mapNext(get("step2")));
+      } else {
+        alert("某一步验证失败，请重试！");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+  <head><title>快捷指令管理器</title></head>
+  <body>
+    <b>微信指令列表↓</b><br />
+    <button onclick="cpcb('有新版本可用\nv1.0→v2.0\n会话升级了，快去体验吧。')">更新推送</button>
+    <button onclick="cpcb('')">欢迎使用</button>
+    <button onclick="cpcb('选择ESP分区\n1.mainboot\n2.mapboot')">ESP分区选择</button>
+    <script>
+      function cpcb(content) {
+        navigator.clipboard.writeText(content)
+          .then(() => {alert("已复制到剪贴板，如果没有成功，请手动复制下面的数据：\n"+content)})
+          .catch(err => {
+            alert("出错了，请重试，或手动复制下面的数据：\n"+content);
+          })
+      }
+    </script>
+  </body>
+</html>
